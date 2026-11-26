@@ -1,0 +1,99 @@
+.testimonials-section {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+  position: relative;
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonial-stage {
+  max-width: 840px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 0.5;
+  color: rgba(212, 175, 55, 0.15);
+  margin-bottom: 1.5rem;
+  user-select: none;
+}
+
+.testimonial-card {
+  padding: 0 1rem;
+}
+
+.testimonial-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.85rem);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.author-name {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.author-context {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.t-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  transition: all var(--duration-fast);
+}
+
+.t-nav-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.t-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.t-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(245, 243, 239, 0.2);
+  transition: all var(--duration-fast);
+}
+
+.t-dot.is-active {
+  background: var(--color-accent);
+  transform: scale(1.3);
+}

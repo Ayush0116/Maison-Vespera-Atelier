@@ -1,0 +1,68 @@
+/* Motion System & Reduced Motion overrides */
+@property --accent-interpolate {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #D4AF37;
+}
+
+/* Base interactive transitions */
+.transition-smooth {
+  transition-property: transform, opacity, background-color, border-color, color;
+  transition-duration: var(--duration-normal);
+  transition-timing-function: var(--ease-out-expo);
+}
+
+/* Continuous Marquee Animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover,
+.marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+/* STRICT REDUCED MOTION SPECIFICATION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+
+  .perspective-stage,
+  .preserve-3d {
+    transform: none !important;
+    perspective: none !important;
+  }
+}
+
+html[data-motion="minimal"] *,
+html[data-motion="minimal"] *::before,
+html[data-motion="minimal"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html[data-motion="minimal"] .marquee-track {
+  animation: none !important;
+  transform: none !important;
+}

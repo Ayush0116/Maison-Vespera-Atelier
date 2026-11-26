@@ -1,0 +1,180 @@
+.contact-section {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg-surface);
+  position: relative;
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: flex-start;
+}
+
+@media (min-width: 992px) {
+  .contact-layout-grid {
+    grid-template-columns: 1.25fr 1fr;
+  }
+}
+
+.open-indicator-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  border: 1px solid transparent;
+}
+
+.open-indicator-pill.is-open {
+  background: rgba(78, 159, 118, 0.15);
+  color: #4E9F76;
+  border-color: rgba(78, 159, 118, 0.3);
+}
+
+.open-indicator-pill.is-closed {
+  background: rgba(224, 109, 83, 0.15);
+  color: #E06D53;
+  border-color: rgba(224, 109, 83, 0.3);
+}
+
+.open-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.contact-subhead {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-street {
+  font-size: 1.0625rem;
+  color: var(--color-text-primary);
+}
+
+.contact-locality,
+.contact-city {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+}
+
+.contact-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all var(--duration-fast);
+}
+
+.contact-action-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.opening-hours-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.hours-subhead {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.hours-table {
+  width: 100%;
+}
+
+.hours-table tr {
+  border-bottom: 1px solid rgba(245, 243, 239, 0.05);
+}
+
+.hours-table tr:last-child {
+  border-bottom: none;
+}
+
+.hours-table td {
+  padding: 0.55rem 0;
+  font-size: 0.875rem;
+}
+
+.day-name {
+  color: var(--color-text-secondary);
+}
+
+.is-today .day-name {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.today-marker {
+  font-size: 0.6875rem;
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  margin-left: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.day-time {
+  text-align: right;
+  color: var(--color-text-primary);
+}
+
+/* Location Photo Frame */
+.location-photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.location-caption-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 12, 14, 0.95) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.location-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.location-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}

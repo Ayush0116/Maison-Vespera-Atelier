@@ -1,0 +1,54 @@
+.floating-contact-container {
+  position: fixed;
+  bottom: calc(var(--space-8) + 40px);
+  right: var(--space-6);
+  z-index: var(--z-floating);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .floating-contact-container {
+    display: block;
+  }
+}
+
+.floating-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(212, 175, 55, 0.2);
+  transition: transform var(--duration-fast) var(--ease-out-expo),
+              box-shadow var(--duration-fast) var(--ease-out-expo);
+  position: relative;
+}
+
+.floating-contact-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.35);
+}
+
+.floating-contact-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-fast);
+}
+
+.floating-contact-btn:hover .floating-contact-tooltip {
+  opacity: 1;
+}

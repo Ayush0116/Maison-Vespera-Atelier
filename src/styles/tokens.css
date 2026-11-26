@@ -1,0 +1,47 @@
+/* Non-brand architectural tokens: spacing, z-index, durations, easings */
+:root {
+  /* Default dynamic measured header offset */
+  --header-height: 80px;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+
+  /* Fluid Section Spacing */
+  --section-padding-y: clamp(4rem, 8vw, 8rem);
+  --container-max: 1320px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+
+  /* Micro-Interaction Animation Tokens (Unified system) */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast: 180ms;
+  --duration-normal: 320ms;
+  --duration-slow: 600ms;
+  --duration-lux: 1000ms;
+
+  /* Z-Index Hierarchy */
+  --z-negative: -1;
+  --z-base: 1;
+  --z-card-elevated: 10;
+  --z-sticky: 100;
+  --z-mobile-bar: 200;
+  --z-floating: 250;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-intro: 999;
+}

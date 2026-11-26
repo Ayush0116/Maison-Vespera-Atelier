@@ -1,0 +1,60 @@
+.mobile-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-mobile-bar);
+  background: rgba(19, 21, 24, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-border);
+  padding: 0.5rem 1rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  animation: actionSlideUp var(--duration-normal) var(--ease-out-expo);
+}
+
+@media (min-width: 768px) {
+  .mobile-action-bar {
+    display: none;
+  }
+}
+
+.mobile-action-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 0.5rem;
+}
+
+.mobile-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  min-height: 44px; /* Touch target accessibility floor */
+  transition: transform var(--duration-fast);
+}
+
+.action-book {
+  background: var(--color-accent);
+  color: #0B0C0E;
+}
+
+.action-call {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.action-whatsapp {
+  background: rgba(78, 159, 118, 0.2);
+  color: #4E9F76;
+  border: 1px solid rgba(78, 159, 118, 0.4);
+}
+
+@keyframes actionSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

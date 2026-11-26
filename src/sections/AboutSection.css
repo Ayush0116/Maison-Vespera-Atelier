@@ -1,0 +1,180 @@
+.about-section {
+  padding: var(--section-padding-y) 0;
+  background: var(--color-bg);
+  position: relative;
+}
+
+/* Pinned Storytelling Scene (Signature Moment 2) */
+.pinned-story-scene {
+  position: relative;
+  min-height: 220vh; /* Deliberate scroll height to orchestrate beats */
+  margin-bottom: var(--space-16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinned-story-scene {
+    min-height: auto;
+  }
+}
+
+.pinned-stage {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-6));
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height) - var(--space-10));
+}
+
+@media (min-width: 992px) {
+  .pinned-stage {
+    grid-template-columns: 1fr 1.15fr;
+  }
+}
+
+.story-beats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-beat-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  background: transparent;
+  opacity: 0.35;
+  transition: opacity var(--duration-normal) var(--ease-out-expo),
+              border-color var(--duration-normal) var(--ease-out-expo),
+              background var(--duration-normal) var(--ease-out-expo),
+              transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.story-beat-card.is-active {
+  opacity: 1;
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-strong);
+  transform: translateX(8px);
+}
+
+.story-beat-num {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.story-beat-title {
+  margin-bottom: 0.5rem;
+}
+
+.story-beat-text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Right Synchronized 3D Photo Canvas */
+.story-photo-canvas {
+  position: relative;
+  width: 100%;
+  height: clamp(360px, 42vw, 520px);
+}
+
+.story-photo-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.95) translateZ(-40px);
+  transition: opacity var(--duration-slow) var(--ease-out-expo),
+              transform var(--duration-slow) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.story-photo-slide.is-visible {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+  pointer-events: auto;
+}
+
+.story-photo-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Philosophy Pillars Strip */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-card {
+  padding: 2.25rem 1.75rem;
+  background: var(--color-bg-surface);
+}
+
+.pillar-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-title {
+  margin-bottom: 0.75rem;
+}
+
+.pillar-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.about-action-row {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-meet-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+
+.about-meet-btn:hover {
+  background: var(--color-accent);
+  color: #0B0C0E;
+}

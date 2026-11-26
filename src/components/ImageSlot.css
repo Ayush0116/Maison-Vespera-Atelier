@@ -1,0 +1,47 @@
+.image-slot-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-bg-surface);
+}
+
+.image-slot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-lux) var(--ease-out-expo),
+              filter var(--duration-normal) var(--ease-out-expo);
+  display: block;
+}
+
+.image-slot-fallback {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #131518 0%, #1A1D22 100%);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.fallback-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fallback-monogram {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+}
+
+.fallback-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
