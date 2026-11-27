@@ -1,7 +1,8 @@
 .team-section {
-  padding: var(--section-padding-y) 0;
+  /* padding: var(--section-padding-y) 0; */
   background: var(--color-bg-surface);
   position: relative;
+
 }
 
 .team-grid {
